@@ -29,9 +29,6 @@ while True:
     if not valid:
         break
 
-    # Apply lens distortion correction
-    img = cv.undistort(img, K, dist_coeff)
-
     # Estimate the camera pose
     success, img_points = cv.findChessboardCorners(img, board_pattern, board_criteria)
     if success:
@@ -61,4 +58,3 @@ while True:
 
 video.release()
 cv.destroyAllWindows()
-
